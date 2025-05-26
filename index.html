@@ -23,6 +23,15 @@
     </tbody>
   </table>
   <p>Solde : <strong id="balance">1000</strong> €</p>
+  <script>
+fetch('users.php?action=check')
+  .then(res => res.json())
+  .then(data => {
+    if (!data.loggedIn) {
+      window.location.href = 'register.html';
+    }
+  });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
